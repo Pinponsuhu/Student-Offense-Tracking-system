@@ -439,6 +439,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .right-0 {
   right: 0px;
 }
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+.col-span-1 {
+  grid-column: span 1 / span 1;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -510,6 +516,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .-mt-px {
   margin-top: -1px;
 }
+.mb-12 {
+  margin-bottom: 3rem;
+}
 .block {
   display: block;
 }
@@ -542,6 +551,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-9 {
   height: 2.25rem;
+}
+.h-auto {
+  height: auto;
+}
+.h-24 {
+  height: 6rem;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -647,6 +662,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .gap-x-0 {
   -moz-column-gap: 0px;
        column-gap: 0px;
+}
+.gap-x-6 {
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
 }
 .overflow-hidden {
   overflow: hidden;
@@ -795,6 +814,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-3\.5 {
   padding-top: 0.875rem;
   padding-bottom: 0.875rem;
+}
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 .pt-8 {
   padding-top: 2rem;
@@ -1006,6 +1029,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-top: 1.5rem;
   }
 
+  .md\:mt-0 {
+    margin-top: 0px;
+  }
+
+  .md\:mb-4 {
+    margin-bottom: 1rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -1026,6 +1057,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 18rem;
   }
 
+  .md\:h-auto {
+    height: auto;
+  }
+
+  .md\:h-24 {
+    height: 6rem;
+  }
+
   .md\:w-5\/6 {
     width: 83.333333%;
   }
@@ -1038,12 +1077,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 24rem;
   }
 
-  .md\:w-auto {
-    width: auto;
-  }
-
   .md\:w-10\/12 {
     width: 83.333333%;
+  }
+
+  .md\:w-auto {
+    width: auto;
   }
 
   .md\:grid-cols-2 {
@@ -1056,6 +1095,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:items-center {
     align-items: center;
+  }
+
+  .md\:justify-start {
+    justify-content: flex-start;
   }
 
   .md\:gap-x-0 {
@@ -1104,6 +1147,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     background-color: rgb(254 252 232 / var(--tw-bg-opacity));
   }
 
+  .md\:p-0 {
+    padding: 0px;
+  }
+
   .md\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -1112,6 +1159,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:px-24 {
     padding-left: 6rem;
     padding-right: 6rem;
+  }
+
+  .md\:py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .md\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-yellow-500 {
+    --tw-text-opacity: 1;
+    color: rgb(234 179 8 / var(--tw-text-opacity));
   }
 
   .md\:shadow-md {

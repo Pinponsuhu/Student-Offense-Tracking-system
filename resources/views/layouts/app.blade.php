@@ -18,5 +18,5 @@
 </head>
 <body class="bg-yellow-50">
     @include('layouts.nav')
-@yield('content')
+    @yield('content')
 </body>

@@ -2,7 +2,7 @@
 @section('content')
     <main class="bg-white py-4 h-screen overflow-y-scroll">
         <h1 class="text-2xl capitalize font-bold mb-3 mt-20 ml-5">Add new marshal</h1>
-        <form action="w-80 mx-auto md:w-10/12 px-8 rounded-md shadow-md md:grid md:grid-cols-2 md:gap-x-6" class="" method="post">
+        <form class="w-80 mx-auto md:w-10/12 px-8 py-12 rounded-md shadow-md md:grid md:grid-cols-2 gap-x-2" method="post">
             @csrf
             <div class="my-3">
                 <label class="font-bold block mb-1">Profile Picture</label>
@@ -32,6 +32,7 @@
                 <label class="font-bold block mb-1">Confirm Password</label>
                 <input type="password" placeholder="Repeat Password" name="password_confirmation" class="block outline-none py-3 px-2 w-full bg-white shadow-md rounded-md" id="">
             </div>
+            <button class="block mb-12 md:mb-4 py-3 text-center bg-yellow-400 text-white font-bold rounded-md md:col-span-2 w-32">Submit</button>
         </form>
     </main>
 @endsection

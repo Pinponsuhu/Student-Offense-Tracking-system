@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NavigateController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('register-marshall');
-});
+Route::get('/', [NavigateController::class, 'index']);
+Route::get('/report', [NavigateController::class, 'report']);
+Route::get('/see/student', [NavigateController::class, 'see_student']);
+Route::get('/file/student', [NavigateController::class, 'file_offense']);
