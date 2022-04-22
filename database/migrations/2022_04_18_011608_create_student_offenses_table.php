@@ -14,8 +14,13 @@ class CreateStudentOffensesTable extends Migration
     public function up()
     {
         Schema::create('student_offenses', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->unsignedInteger('student_id');
+            $table->string('remark');
+            $table->string('reported_by');
             $table->timestamps();
+
+            $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade');
         });
     }
 

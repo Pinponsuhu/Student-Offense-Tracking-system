@@ -15,7 +15,10 @@ class CreateStudentOffenseFilesTable extends Migration
     {
         Schema::create('student_offense_files', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('offense_id');
+            $table->string('file_name');
             $table->timestamps();
+            $table->foreign('offense_id')->references('id')->on('student_offenses')->onDelete('cascade');
         });
     }
 

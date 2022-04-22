@@ -23,7 +23,10 @@
                 <h1 class="text-3xl font-bold">Login</h1>
                 <p class="-mt-1 text-gray-400">Please sign in to continue</p>
 
-                <form action="" class="mt-3" method="post">
+                <form action="/login" class="mt-3" method="post">
+                    @if (Session('status'))
+                        <p class="text-sm text-center my-2 text-red-400 font-bold">{{ Session('status') }}</p>
+                    @endif
                     @csrf
                     <div class="my-3">
                         <label for="email" class="font-bold block mb-1">Email</label>
