@@ -344,4 +344,23 @@ class NavigateController extends Controller
 
             return back()->with('msg','New Password is "password_admin"');
     }
+
+    public function search_student_all(Request $request){
+        $request->validate([
+            'search' => 'required'
+        ]);
+
+        $students = Student::where('matric_number',$request->search)->orWhere('phone',$request->search)->orWhere('email',$request->search)->orWhere('phone',$request->search)->get();
+        $count = Student::where('matric_number',$request->search)->orWhere('phone',$request->search)->orWhere('email',$request->search)->orWhere('phone',$request->search)->count();
+        return view('all-student-search',['students'=> $students, 'search'=>$request->search,'count'=>$count]);
+    }
+    public function search_marshal_all(Request $request){
+        $request->validate([
+            'search' => 'required'
+        ]);
+
+        $marshals = User::where('id_number',$request->search)->orWhere('phone',$request->search)->orWhere('email',$request->search)->orWhere('phone',$request->search)->get();
+        $marshals_c = User::where('id_number',$request->search)->orWhere('phone',$request->search)->orWhere('email',$request->search)->orWhere('phone',$request->search)->count();
+        return view('all-marshal-search',['marshals'=> $marshals,'count'=>$marshals_c, 'search'=>$request->search]);
+    }
 }

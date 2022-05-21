@@ -5,6 +5,11 @@
         <h1 class="font-bold ml-6 text-2xl text-gray-600">All Students</h1>
         <span onclick="addstudent()" class="cursor-pointer bg-yellow-500 text-white font-bold py-2.5 px-5 rounded-sm">Add Student</span>
     </div>
+    <form method="GET" class="mx-auto flex my-4 justify-center" action="/search/student">
+        @csrf
+        <input type="text" name="search" class="w-3/6 py-3 bg-white text-yellow-400 shadow-md rounded-tl-md rounded-bl px-3 placeholder-yellow-400" placeholder="Search ID number, Email or Phone Number" id="">
+        <button class="py-3 bg-yellow-400 text-white px-5 rounded-tr-md rounded-br-md shadow-md hover:bg-yellow-500">Search</button>
+    </form>
     {{-- <div>
         <form action="" method="get">
             @csrf
@@ -119,8 +124,15 @@
             </form>
 
     </div>
-
+    @if (Session('msg'))
+    <div id="msg" onclick="hideMsg()" class="fixed top-4 right-4 w-80 md:w-4/6 px-4 py-2 bg-green-400">
+        <p class="text-sm font-bold">{{ Session('msg') }}</p>
+    </div>
+@endif
     <script>
+        function hideMsg(){
+            document.getElementById('msg').classList.add('hidden');
+        }
         function addstudent(){
             document.getElementById('student-form').classList.remove('hidden');
         }

@@ -1,10 +1,15 @@
 @extends('layouts.app')
 @section('content')
     <main class="w-full mt-24">
-    <div class="px-8 flex justify-between items-center my-4">
+    <div class="px-8 flex justify-between items-center mt-4">
         <h1 class="font-bold ml-6 text-2xl text-gray-600">All marshals</h1>
         <span onclick="addmarshal()" class="cursor-pointer bg-green-500 text-white font-bold py-2.5 px-5 rounded-sm">Add marshal</span>
     </div>
+    <form method="GET" action="/search/marshal" class="mx-auto flex my-4 justify-center">
+        @csrf
+        <input type="text" name="search" class="w-3/6 py-3 bg-white text-green-400 shadow-md rounded-tl-md rounded-bl px-3 placeholder-green-400" placeholder="Search ID number, Email or Phone Number" id="">
+        <button class="py-3 bg-green-400 text-white px-5 rounded-tr-md rounded-br-md shadow-md hover:bg-green-500">Search</button>
+    </form>
     {{-- <div>
         <form action="" method="get">
             @csrf

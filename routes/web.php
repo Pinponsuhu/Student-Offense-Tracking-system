@@ -45,3 +45,5 @@ Route::get('/student/delete/{id}', [NavigateController::class, 'delete_student']
 Route::get('/admin/delete/{id}', [NavigateController::class, 'delete_admin']);
 Route::post('/marshal/password/{id}',[NavigateController::class, 'marshal_password']);
 Route::post('/admin/password/{id}',[NavigateController::class, 'admin_password']);
+Route::get('/search/student',[NavigateController::class,'search_student_all']);
+Route::get('/search/marshal',[NavigateController::class,'search_marshal_all']);
